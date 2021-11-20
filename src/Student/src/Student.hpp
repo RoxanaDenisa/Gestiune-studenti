@@ -12,7 +12,7 @@ class Student
     int varsta;
 public:
     //Constructor - lista de initializare
-    // Student() : nota_admitere(0), varsta(0); 
+     Student(); 
     //Constructor
     Student(char *n,int nota_a, int v);
     //Copy constructor

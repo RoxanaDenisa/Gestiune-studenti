@@ -1,9 +1,9 @@
 #include "Student.hpp"
- /*//Constructor - lista de initializare
-Student() : nota_admitere(0), varsta(0){
-    this -> nume = new char[strlen("none") + 1];
-    strcpy(this -> nume, "none"); 
-} */
+ //Constructor - lista de initializare
+Student::Student():nota_admitere(0), varsta(0){
+    this -> nume = new char[strlen("") + 1];
+    strcpy(this -> nume, ""); 
+} 
 //Constructor
 Student:: Student(char *n,int nota_a, int v){
     nume=new char[strlen(n)+1];

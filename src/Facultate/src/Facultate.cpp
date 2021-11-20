@@ -10,7 +10,7 @@ Facultate::Facultate(){
 Facultate:: Facultate(char *n, char *s){
     nume=new char[strlen(n)+1];
     strcpy(nume,n);
-    sectie=new char[strlen(n)+1];
+    sectie=new char[strlen(s)+1];
     strcpy(sectie,s);
     cout<<"Constructor\n";
 }

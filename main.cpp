@@ -1,6 +1,6 @@
 #include "src/Student/src/Student.hpp"
 #include "src/Facultate/src/Facultate.hpp"
-//#include "src/Universitate/src/Universitate.hpp"
+#include "src/Universitate/src/Universitate.hpp"
 #include <iostream>
 using namespace std;
 
@@ -19,4 +19,10 @@ int main(){
     ac.adaugaStudent(student1);
     ac.adaugaStudent(student2);
     ac.afiseazaStudenti();
+
+    char nume_u1[] = "Politehnica";
+    char localitate1[]="Timisoara";
+    Universitate poli(nume_u1, localitate1);
+    poli.adaugaFacultate(ac);
+    poli.afiseazaFacultati();
 }

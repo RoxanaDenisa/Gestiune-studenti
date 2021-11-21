@@ -44,3 +44,19 @@ void Student:: display(){
 void Student:: display(int age){
     cout<<"Studentul "<<nume<< " cu varsta de "<<varsta<<" ani a obtinut nota "<<nota_admitere<<"\n";
 }
+
+//copy assignment operator
+Student& Student::operator=(const Student& s)
+{
+    //check for self-assign
+    if(this == &s) {
+        //identity test
+        cout<<"self-assign"<<"\n";
+        return *this;
+    }
+    this -> nume = s.nume;
+    this -> nota_admitere = s.nota_admitere;
+    this -> varsta = s.varsta;
+    
+    return *this;
+}

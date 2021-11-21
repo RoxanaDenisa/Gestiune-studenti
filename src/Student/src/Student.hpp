@@ -26,7 +26,8 @@ public:
     void display();
     //overloading display
      void display(int age);
-
+    //copy assignment operator
+    Student& operator=(const Student& s);
 
 };
 

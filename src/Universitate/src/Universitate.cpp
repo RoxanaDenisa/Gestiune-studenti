@@ -27,8 +27,10 @@ Universitate::Universitate(const Universitate &obj){
  //Destructor
 Universitate::~Universitate(){
     cout<<"Freeing\n";
-    delete nume;
-    delete localitate;
+    if(nume)
+        delete nume;
+    if(localitate)
+        delete localitate;
 
 }
 void Universitate::adaugaFacultate(Facultate &facultate)

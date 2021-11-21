@@ -27,8 +27,10 @@ Facultate::Facultate(const Facultate &obj){
  //Destructor
 Facultate::~Facultate(){
     cout<<"Freeing\n";
-    delete nume;
-    delete sectie;
+    if (nume)
+        delete nume;
+    if(sectie)
+        delete sectie;
 
 }
 void Facultate::adaugaStudent(Student &student)

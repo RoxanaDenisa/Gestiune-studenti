@@ -24,7 +24,8 @@ Student::Student(const Student &obj){
  //Destructor
 Student::~Student(){
     cout<<"Freeing\n";
-    delete nume;
+    if(nume)
+        delete nume;
 
 }
 char * Student::getNume(){
@@ -34,7 +35,7 @@ int Student:: getNotaAdmitere(){
     return this->nota_admitere;
 }
 int Student:: getVarsta(){
-    return varsta;
+    return this->varsta;
 }
 void Student:: display(){
     
@@ -42,9 +43,8 @@ void Student:: display(){
     
 }
 void Student:: display(int age){
-    cout<<"Studentul "<<nume<< " cu varsta de "<<varsta<<" ani a obtinut nota "<<nota_admitere<<"\n";
+    cout<<"Studentul "<<getNume()<< " cu varsta de "<<getVarsta()<<" a obtinut nota "<<getNotaAdmitere()<<"\n";
 }
-
 //copy assignment operator
 Student& Student::operator=(const Student& s)
 {
@@ -54,7 +54,8 @@ Student& Student::operator=(const Student& s)
         cout<<"self-assign"<<"\n";
         return *this;
     }
-    this -> nume = s.nume;
+    this -> nume =new char[strlen(s.nume)+1];
+    strcpy(this->nume, s.nume);
     this -> nota_admitere = s.nota_admitere;
     this -> varsta = s.varsta;
     

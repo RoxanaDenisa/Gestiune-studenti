@@ -1,4 +1,4 @@
-#include "src/Student/src/Student.hpp"
+#include "src/Student/src/Bursier.hpp"
 #include "src/Facultate/src/Facultate.hpp"
 #include "src/Universitate/src/Universitate.hpp"
 #include <iostream>
@@ -18,12 +18,16 @@ int main(){
     student3.display();
 
     //Atribuire inlantuita - copy assignment operator
-    //student1=student2=student3;
-    //student1.display();
+    student1=student2=student3;
+    student1.display();
 
     //self-assign
-    //student1=student1;
-    //student1.display();
+    student1=student1;
+    student1.display();
+    
+    char nume4[20] = "Ioana Popescu";
+    Bursier bursier1(nume4, 10, 18, 1000);
+    bursier1.displayBursier();
 
     char nume_f1[30] = "Automatica si Calculatoare";
     char sectie1[40]="Calculatoare si Tehnologia Informatiei";

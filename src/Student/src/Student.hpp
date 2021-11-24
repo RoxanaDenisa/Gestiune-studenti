@@ -7,9 +7,11 @@ using namespace std;
 
 class Student
 {
+protected:
     char *nume;
     int nota_admitere;
     int varsta;
+    
 public:
     //Constructor - lista de initializare
      Student(); 

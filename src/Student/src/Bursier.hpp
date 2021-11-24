@@ -11,6 +11,7 @@ private:
 
     
 public:
+    Bursier();
     Bursier(char *n,int nota_a, int v, int s);
     Bursier(const Bursier &);
     Bursier& operator=(const Bursier& obj);

@@ -1,5 +1,7 @@
 #include "Bursier.hpp"
 
+Bursier::Bursier():Student(), valoare_bursa(0){};
+
 Bursier::Bursier(char *n,int nota_a, int v, int valoare_bursa)
     : Student(n,nota_a, v),
       valoare_bursa(valoare_bursa) {}

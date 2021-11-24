@@ -4,6 +4,7 @@ Student::Student():nota_admitere(0), varsta(0){
     this -> nume = new char[strlen("") + 1];
     strcpy(this -> nume, ""); 
 } 
+
 //Constructor
 Student:: Student(char *n,int nota_a, int v){
     nume=new char[strlen(n)+1];
@@ -12,6 +13,7 @@ Student:: Student(char *n,int nota_a, int v){
     varsta=v;
     cout<<"Constructor\n";
 }
+
 //Copy constructor
 Student::Student(const Student &obj){
     varsta=obj.varsta;
@@ -45,6 +47,7 @@ void Student:: display(){
 void Student:: display(int age){
     cout<<"Studentul "<<getNume()<< " cu varsta de "<<getVarsta()<<" a obtinut nota "<<getNotaAdmitere()<<"\n";
 }
+
 //copy assignment operator
 Student& Student::operator=(const Student& s)
 {

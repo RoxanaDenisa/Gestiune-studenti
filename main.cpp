@@ -1,11 +1,50 @@
 #include "src/Student/src/Bursier.hpp"
 #include "src/Facultate/src/Facultate.hpp"
 #include "src/Universitate/src/Universitate.hpp"
+#include "src/Lock/src/Lock.cpp"
 #include <iostream>
+#include <thread>
 using namespace std;
+Lock l;
+Student s;
+Facultate f=Facultate ("AC", "CTI");
+int numar;
+void adaugare_student(){
+    char n[20];
+    int nota;
+    int varsta;
+    int count=0;
+    
+    while(count<numar){
+        
+        l.lock();
+        cout<<"Introduceti numele ";
+        cin>>n;        
+        cout<<"Nota ";
+        cin>>nota;
+        cout<<"Varsta ";
+        cin>>varsta;
+        s=Student(n,nota,varsta);
+        f.adaugaStudent(s);
+        l.unlock();
+        count++;
+        }
 
+    }
+
+void afisare(){
+    int i=0;
+    while (i<numar){
+       
+        l.lock();
+        f.afis(i);
+        l.unlock();
+        i++;
+    }
+
+}
 int main(){
-    char nume_s1[20] = "Stefania Farcas";
+/*    char nume_s1[20] = "Stefania Farcas";
     Student student1(nume_s1, 10, 19);
     student1.display();
 
@@ -41,4 +80,11 @@ int main(){
     Universitate poli(nume_u1, localitate1);
     poli.adaugaFacultate(ac);
     poli.afiseazaFacultati();
+*/
+    cout<<"Dati numarul de studenti pe care vreti sa ii adaugati";
+    cin>>numar;
+    thread s1(adaugare_student);
+    thread s2(afisare);
+    s1.join();
+    s2.join();
 }

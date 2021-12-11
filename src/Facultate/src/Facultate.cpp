@@ -65,3 +65,6 @@ void Facultate::afiseazaStudenti()
         cout << s.getNume() << endl;
     }
 }
+void Facultate::afis(int i){
+     studenti.at(i).display();
+}

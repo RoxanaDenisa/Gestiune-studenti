@@ -23,6 +23,7 @@ public:
     char *getNume();
     char *getSectie();
     void afiseazaStudenti();
+    void afis(int i);
 
 };
 

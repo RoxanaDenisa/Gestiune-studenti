@@ -3,11 +3,14 @@
 #include "src/Universitate/src/Universitate.hpp"
 #include "src/Lock/src/Lock.cpp"
 #include <iostream>
+#include <memory>
 #include <thread>
 using namespace std;
 Lock l;
 Student s;
-Facultate f=Facultate ("AC", "CTI");
+char nume_f1[30] = "Automatica si Calculatoare";
+char sectie1[40]="Calculatoare si Tehnologia Informatiei";
+Facultate f=Facultate (nume_f1, sectie1);
 int numar;
 void adaugare_student(){
     char n[20];
@@ -81,7 +84,15 @@ int main(){
     poli.adaugaFacultate(ac);
     poli.afiseazaFacultati();
 */
-    cout<<"Dati numarul de studenti pe care vreti sa ii adaugati";
+    char nume_s1[20] = "Stefania Farcas";
+    char nume_s2[20] = "Ionescu Razvan";
+    unique_ptr<Student> loc_cazare_camin = make_unique<Student>(nume_s1, 9, 20);
+    shared_ptr<Student> situatie_secretara;
+    shared_ptr<Student> situatie_profesor = make_shared<Student>(nume_s2, 10, 21);
+    situatie_secretara=situatie_profesor;
+    cout<<situatie_secretara->getNota()<<"\n";
+
+    cout<<"Dati numarul de studenti pe care vreti sa ii adaugati ";
     cin>>numar;
     thread s1(adaugare_student);
     thread s2(afisare);

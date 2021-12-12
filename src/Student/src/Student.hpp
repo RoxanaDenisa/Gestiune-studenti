@@ -27,7 +27,7 @@ public:
 
     //gettere
     char *getNume();
-    int getNotaAdmitere();
+    int getNota();
     int getVarsta();
     
     void display();

@@ -24,6 +24,6 @@ int Bursier::getValoareBursa()
 }
 void Bursier::displayBursier()
 {
-     cout<<"Studentul "<<getNume()<<" a obtinut nota "<<getNotaAdmitere()<< " avand bursa de "<<getValoareBursa()<<"lei"<<"\n";
+     cout<<"Studentul "<<getNume()<<" a obtinut nota "<<getNota()<< " avand bursa de "<<getValoareBursa()<<"lei"<<"\n";
 }
 

@@ -33,7 +33,7 @@ Student::~Student(){
 char * Student::getNume(){
     return this->nume;
 }
-int Student:: getNotaAdmitere(){
+int Student:: getNota(){
     return this->nota_admitere;
 }
 int Student:: getVarsta(){
@@ -41,11 +41,11 @@ int Student:: getVarsta(){
 }
 void Student:: display(){
     
-    cout<<"Studentul "<<getNume()<<" a obtinut nota "<<getNotaAdmitere()<<"\n";
+    cout<<"Studentul "<<getNume()<<" a obtinut nota "<<getNota()<<"\n";
     
 }
 void Student:: display(int age){
-    cout<<"Studentul "<<getNume()<< " cu varsta de "<<getVarsta()<<" a obtinut nota "<<getNotaAdmitere()<<"\n";
+    cout<<"Studentul "<<getNume()<< " cu varsta de "<<getVarsta()<<" a obtinut nota "<<getNota()<<"\n";
 }
 
 //copy assignment operator

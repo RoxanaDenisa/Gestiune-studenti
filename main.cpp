@@ -12,6 +12,7 @@ char nume_f1[30] = "Automatica si Calculatoare";
 char sectie1[40]="Calculatoare si Tehnologia Informatiei";
 Facultate f=Facultate (nume_f1, sectie1);
 int numar;
+
 void adaugare_student(){
     char n[20];
     int nota;
@@ -84,14 +85,22 @@ int main(){
     poli.adaugaFacultate(ac);
     poli.afiseazaFacultati();
 */
+    
+    
+    {
     char nume_s1[20] = "Stefania Farcas";
-    char nume_s2[20] = "Ionescu Razvan";
+    //unique pointer
     unique_ptr<Student> loc_cazare_camin = make_unique<Student>(nume_s1, 9, 20);
+    cout<<"S-a cazat studentul " <<loc_cazare_camin->getNume()<<"\n";
+    }
+    {
+    char nume_s2[20] = "Ionescu Razvan";
+    //shared pointer
     shared_ptr<Student> situatie_secretara;
     shared_ptr<Student> situatie_profesor = make_shared<Student>(nume_s2, 10, 21);
     situatie_secretara=situatie_profesor;
     cout<<situatie_secretara->getNota()<<"\n";
-
+    }
     cout<<"Dati numarul de studenti pe care vreti sa ii adaugati ";
     cin>>numar;
     thread s1(adaugare_student);
